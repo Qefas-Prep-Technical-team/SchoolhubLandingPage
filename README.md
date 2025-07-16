@@ -37,6 +37,13 @@ git clone https://github.com/yourusername/schoolhub-landing.git
 
 # 2. Navigate to project directory
 cd schoolhub-landing
+three branches 
+main - this is the main deployment branch please donot develop or code in it only push into once feature is verified 
+staging - this is the test deployment branch this is where new features are sent before pushing into main 
+dev - this is where the main code is written befor validation 
+
+
+dev  ➜  staging  ➜  main
 
 # 3. Install dependencies
 npm install
