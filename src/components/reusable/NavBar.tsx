@@ -41,15 +41,11 @@ function NavBar() {
     };
     const { theme, setTheme } = useTheme();
     return (
-        <AppBar position="static" sx={{ backgroundColor: theme === "dark" ? 'black' : "white", color: theme === "dark" ? 'white' : "black" }}>
-            <Container maxWidth="xl">
-                <Toolbar className='justify-between flex' disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                 
+        <AppBar position="static" sx={{ backgroundColor: theme === "dark" ? 'black' : "white", color: theme === "dark" ? 'white' : "black", padding: 0 }}>
 
-
-
-                    <BigNavBar />
-                    {/* <Box sx={{ flexGrow: 0 }}>
+            <Toolbar className='justify-between flex p-0' disableGutters >
+                <BigNavBar handleCloseNavMenu={handleCloseNavMenu} />
+                {/* <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -78,8 +74,8 @@ function NavBar() {
                             ))}
                         </Menu>
                     </Box> */}
-                </Toolbar>
-            </Container>
+            </Toolbar>
+
         </AppBar>
     );
 }
