@@ -1,88 +1,36 @@
-# SchoolHub Landing Page 🚀
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This is the **official landing page** for [SchoolHub](https://www.schoolhub.com) — a modern, Software-as-a-Service (SaaS) platform designed to help schools efficiently manage students, teachers, results, attendance, and fees.
+## Getting Started
 
-This landing site is the public-facing website where school owners, admins, and educators can learn more about the product, explore its features, view pricing, and sign up for access to their personalized dashboard.
+First, run the development server:
 
----
-
-## 🔧 Tech Stack
-
-- **Framework:** [Next.js](https://nextjs.org/) (App Router / File-based routing)
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion (optional)
-- **Deployment:** Vercel / Netlify
-- **Forms:** React Hook Form (optional)
-- **Icons:** Lucide / Heroicons
-
----
-
-## 📄 Pages and Structure
-
-| Page | Description |
-|------|-------------|
-| `/` | Homepage — introduction, key features, CTA |
-| `/features` | Deep dive into product features |
-| `/pricing` | Subscription plans and FAQs |
-| `/about` | Company mission, story, and team |
-| `/contact` | Inquiry form, support, and social links |
-| `/login` | Redirect to dashboard subdomain login/signup |
-
----
-
-## 🚀 Getting Started
-
-# 1. Clone the repo
-git clone https://github.com/yourusername/schoolhub-landing.git
-
-# 2. Navigate to project directory
-cd schoolhub-landing
-three branches 
-main - this is the main deployment branch please donot develop or code in it only push into once feature is verified 
-staging - this is the test deployment branch this is where new features are sent before pushing into main 
-dev - this is where the main code is written befor validation 
-
-
-dev  ➜  staging  ➜  main
-
-# 3. Install dependencies
-npm install
-
-# 4. Start the dev server
+```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-🛠 Features
-Fully responsive and mobile-first
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-SEO-friendly layout and metadata
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-CTA buttons to drive conversions
+## Learn More
 
-Clean code structure for easy updates
+To learn more about Next.js, take a look at the following resources:
 
-Dynamic routing with Next.js
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Easy integration with payment and signup flow
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-📦 Deployment
-Easily deploy on Vercel or Netlify with automatic Git-based CI/CD.
+## Deploy on Vercel
 
-📬 Contact
-For questions or feedback:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Email: support@schoolhub.com
-
-Twitter: @schoolhub_app
-
-🧠 Future Improvements
-Blog integration for SEO
-
-Live demo preview
-
-Language switcher (EN/FR/NL)
-
-CMS integration (e.g. Sanity, Contentful)
-
-🔒 License
-MIT License © 2025 Qefas prep
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
