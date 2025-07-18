@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import React, { FC } from 'react';
+import { Button as Button2 } from "@/components/ui/button";
 interface BigNavBarProps {
     pages?: string[];
     handleCloseNavMenu: () => void
@@ -14,7 +15,7 @@ const BigNavBar: FC<BigNavBarProps> = ({ pages = ['Feature', 'Pricing', 'About U
     return (
         <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'space-between', padding: 2, flexGrow: 1, width: '100%' }}>
             <Box className='flex items-center flex-row justify-center'>
-                <Box className="justify-center items-center flex mr-5">
+                <Box className="justify-center items-center flex mr-5 p-0">
                     <Image src="/schoolhub.png" alt="school hub logo" width={30} height={30} className='space-x-20' />
                 </Box>
                 <Typography
@@ -30,6 +31,7 @@ const BigNavBar: FC<BigNavBarProps> = ({ pages = ['Feature', 'Pricing', 'About U
                         letterSpacing: '.3rem',
                         color: 'inherit',
                         textDecoration: 'none',
+
                     }}
                 >
                     SCHOOLHUB
@@ -46,7 +48,10 @@ const BigNavBar: FC<BigNavBarProps> = ({ pages = ['Feature', 'Pricing', 'About U
                     </Button>
                 ))}
             </Box>
-            <ThemeToggle />
+            <Box className='flex items-center space-x-4'>
+                <ThemeToggle />
+                <Button2> Get Started</Button2>
+            </Box>
         </Box>
     );
 };

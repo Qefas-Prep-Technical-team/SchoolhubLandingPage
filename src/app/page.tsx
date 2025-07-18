@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./theme-toggle";
+import IntroSection from "@/components/home/IntroSection";
 
 
 export default function Home() {
   return (
     <div className="min-h-screen flex items-center flex-col justify-center bg-white dark:bg-black text-black dark:text-gray-200 transition-all duration-300">
+      <IntroSection />
       <div className="max-w-3xl text-center space-y-10">
 
         <h1 className="text-6xl font-semibold"> welcome to schoolhub</h1>

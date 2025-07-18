@@ -17,6 +17,7 @@ import { ThemeToggle } from '@/app/theme-toggle';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import BigNavBar from './BigNavBar';
+import { MiniNav } from './MiniNav';
 
 const pages = ['Feature', 'Pricing', 'About Us', 'contact'];
 const settings = ['Feature', 'Pricing', 'About Us', 'contact'];
@@ -45,6 +46,11 @@ function NavBar() {
 
             <Toolbar className='justify-between flex p-0' disableGutters >
                 <BigNavBar handleCloseNavMenu={handleCloseNavMenu} />
+                <MiniNav
+                    handleOpenNavMenu={handleOpenNavMenu}
+                    pages={pages}
+                    handleCloseNavMenu={handleCloseNavMenu}
+                />
                 {/* <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

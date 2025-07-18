@@ -21,7 +21,7 @@ function MuiWrapper({ children }: { children: React.ReactNode }) {
     useEffect(() => setMounted(true), []);
 
     const muiTheme = useMemo(
-        () => getMuiTheme(resolvedTheme === 'dark' ? 'dark' : 'light'),
+        () => getMuiTheme(resolvedTheme === 'dark' ? 'light' : 'dark'),
         [resolvedTheme]
     );
 
