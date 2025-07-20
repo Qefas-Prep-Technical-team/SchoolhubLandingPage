@@ -28,7 +28,7 @@ const IntroSection: FC = () => {
 
                 <Box className="flex items-center justify-between w-75  mt-10">
                     <Button variant='contained' sx={{ backgroundColor: theme === "dark" ? 'black' : "white", color: theme === "dark" ? 'lightBlue' : "blue", }} className='bg-white dark:bg-black text-blue-400'> Try for Free </Button>
-                    <Button variant="outlined" sx={{ borderColor: theme === "dark" ? 'black' : "white", color: theme === "dark" ? 'white' : "black" }} className='bg-white dark:bg-black'> Request a Demo</Button>
+                    <Button variant="outlined" sx={{ borderColor: theme === "dark" ? 'black' : "white", color: theme === "dark" ? 'black' : "white" }} className='bg-white dark:bg-black'> Request a Demo</Button>
                 </Box>
 
             </Box>
