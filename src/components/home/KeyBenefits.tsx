@@ -31,7 +31,7 @@ const KeyBenefits: FC = () => {
     const iconSelector = (type: string) => {
         if (type === "people") {
             return <GoPeople />
-        } else if (type === "calendar") {
+        } else if (type === "calender") {
             return <IoCalendarNumberOutline />
 
         } else if (type === "chart") {
@@ -59,7 +59,7 @@ const KeyBenefits: FC = () => {
                     <p className='md:text-xl sm:text-lg w-3/4 text-center  mx-auto'>Discover how SchoolHub empowers your institution to achieve excellence through
                         efficiency and collaboration.</p>
                 </div>
-                <Box component={"div"} className="grid grid-cols-1 md:grid-cols-4 gap-16 mt-10 w-3/4 px-26  ">
+                <Box component={"div"} className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-10 w-4/4 px-26  ">
                     {benefits.map((benefit, index) => (
                         <Box key={index} className="flex flex-col items-center justify-center p-6 py-10 bg-white dark:bg-black rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-4/4 text-center">
                             <div

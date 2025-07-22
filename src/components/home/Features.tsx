@@ -29,15 +29,17 @@ const Features: FC = () => {
                 <p className='md:text-xl sm:text-lg w-3/4 text-center  mx-auto'>SchoolHub provides a suite of tools to manage all aspects of your school, from Student
                     information to academic reporting.</p>
             </div>
-            <Box component={"div"} className="grid grid-cols-1 md:grid-cols-3 md:gap-26 py-10 md:w-3/4 md:px-26 ">
+            <Box component={"div"} className="grid grid-cols-1 md:grid-cols-3 md:gap-10 py-10 md:w-full md:px-26 ">
                 {Features.map((feature, index) => (
-                    <Box key={index} className="p-6  items-center md:items-start flex flex-col  justify-center md:p-2 py-10 bg-white dark:bg-black rounded-lg  duration-300 w-4/4 ">
-                        <Box sx={{ backgroundColor: "#fbddcc" }} className='object-cover overflow-hidden h-60 rounded-3xl w-100'>
-                            <Image src={feature.image} alt={`${feature.title} image`} width={600} height={240} style={{ objectFit: 'cover' }} />
-                        </Box>
-                        <h2 className="text-xl font-semibold mb-2 mt-4">{feature.title}</h2>
-                        <p className="text-gray-600 dark:text-gray-400  text-center md:text-start">{feature.description}</p>
-                    </Box>
+                    <div key={index} className="flex flex-col gap-4">
+                        <div className="overflow-hidden rounded-lg shadow-lg group">
+                            <div className="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url(${feature.image})` }}></div>
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
+                            <p className="text-slate-600">{feature.description}</p>
+                        </div>
+                    </div>
                 ))}
             </Box>
         </Box>
