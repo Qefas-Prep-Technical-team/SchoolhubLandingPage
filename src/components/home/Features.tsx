@@ -33,11 +33,19 @@ const Features: FC = () => {
                 {Features.map((feature, index) => (
                     <div key={index} className="flex flex-col gap-4">
                         <div className="overflow-hidden rounded-lg shadow-lg group">
-                            <div className="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url(${feature.image})` }}></div>
+                            <div className="w-full aspect-video relative">
+                                <Image
+                                    src={feature.image}
+                                    alt={feature.title}
+                                    fill
+                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                />
+                            </div>
                         </div>
                         <div>
-                            <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
-                            <p className="text-slate-600">{feature.description}</p>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-400">{feature.title}</h3>
+                            <p className="text-slate-600 dark:text-slate-400">{feature.description}</p>
                         </div>
                     </div>
                 ))}
