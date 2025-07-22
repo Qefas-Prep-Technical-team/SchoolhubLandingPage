@@ -41,7 +41,7 @@ const Footer: FC = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Legal</h3>
                         <ul className="space-y-2">
-                            <li><a className="text-slate-400 hover:text-white transition-colors" href="#">Terms of Services</a></li>
+                            <li><a className="text-slate-400 hover:text-white transition-colors" href="#">Terms of Service</a></li>
                             <li><a className="text-slate-400 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
                         </ul>
                     </div>
