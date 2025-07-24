@@ -7,24 +7,22 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { ThemeToggle } from "@/app/theme-toggle";
 import NavBarDrawer from "./NavBarDrawer";
+import { mainTab } from "../Types/Nav";
 
 interface MiniNavProps {
     handleOpenNavMenu: (event: React.MouseEvent<HTMLElement>) => void;
-    pages: string[];
+    pages: mainTab[];
     handleCloseNavMenu: () => void;
 }
 
-export const MiniNav: FC<MiniNavProps> = (props) => {
-    const { handleOpenNavMenu, pages, handleCloseNavMenu } = props;
-    const [open, setOpen] = useState(false);
+export const MiniNav: FC<MiniNavProps> = ({ pages }) => {
 
-    const toggleDrawer = (newOpen: boolean) => () => {
-        setOpen(newOpen);
-    };
+
+
+
     return (
         <Box className="flex items-center justify-between p-2 w-100" sx={{ display: { xs: 'flex', md: 'none' } }}>
             <NavBarDrawer pages={pages} />
-
             <Box className='flex items-center flex-row justify-center'>
                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, mr: 2 }}>
                     <Image src="/schoolhub.png" alt="school hub logo" width={20} height={20} className='space-x-20' />

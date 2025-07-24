@@ -18,10 +18,12 @@ import DocumentScannerOutlinedIcon from '@mui/icons-material/DocumentScannerOutl
 import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOutlined';
 import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
 import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
+import { mainTab } from '../Types/Nav';
+import Link from 'next/link';
 
 
 interface NavBarDrawerProps {
-    pages: string[];
+    pages: mainTab[];
 }
 export default function NavBarDrawer(props: NavBarDrawerProps) {
     const { pages } = props;
@@ -31,7 +33,7 @@ export default function NavBarDrawer(props: NavBarDrawerProps) {
     };
 
     const handleIcon = (type: string) => {
-        if (type === "Feature") {
+        if (type === "Features") {
             return <DocumentScannerOutlinedIcon />
         } else if (type === "Pricing") {
             return <CurrencyExchangeOutlinedIcon />
@@ -70,14 +72,16 @@ export default function NavBarDrawer(props: NavBarDrawerProps) {
             <Divider className='pt' />
             <List>
                 {pages.map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {handleIcon(text)}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link key={text.name} href={text.href} passHref>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    {handleIcon(text.name)}
+                                </ListItemIcon>
+                                <ListItemText primary={text.name} />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 ))}
             </List>
         </Box>

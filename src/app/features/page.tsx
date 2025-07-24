@@ -1,11 +1,21 @@
-import React, { FC } from 'react';
+"use client"
+import Features from '@/components/features/Features';
+import HeroHead from '@/components/features/HeroHead';
+import Box from '@mui/material/Box';
+import { QueryClientProvider } from '@tanstack/react-query';
+import React, { FC, useState } from 'react';
+import { QueryClient } from '@tanstack/react-query';
 
-const page: FC = () => {
+const FeatursPage: FC = () => {
+    const [queryClient] = useState(() => new QueryClient());
     return (
-        <div className="flex h-full w-full items-center justify-center">
-            <h1> features</h1>
-        </div>
+        <QueryClientProvider client={queryClient}>
+            <Box component="main" className="container mx-auto px-6 py-16">
+                <HeroHead />
+                <Features />
+            </Box>
+        </QueryClientProvider>
     );
 };
 
-export default page;
+export default FeatursPage;
