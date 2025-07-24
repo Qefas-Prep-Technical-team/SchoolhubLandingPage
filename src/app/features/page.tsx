@@ -10,7 +10,7 @@ const FeatursPage: FC = () => {
     const [queryClient] = useState(() => new QueryClient());
     return (
         <QueryClientProvider client={queryClient}>
-            <Box component="main" className="container mx-auto px-6 py-16">
+            <Box component="main" className="container mx-auto px-6 py-16 flex flex-col items-center">
                 <HeroHead />
                 <Features />
             </Box>

@@ -1,0 +1,45 @@
+[
+    {
+        "name":"Student Plan",
+        "price": 1000,
+        "basis": "3 month",
+        "description": "Basic plan for students ",
+        "features": [
+            "admin dashboard ",
+            "2 admins",
+            "Up to 100 students",
+            "full features"
+        ],
+        "hasTrial": true,
+        "trialDays": 14,
+        "isPopular": true
+    },
+    {
+        "name":"parent Plan",
+        "price": 1000,
+        "basis": "3 month",
+        "description": "Basic plan for parents",
+        "features": [
+            "up to 3 child ",
+            "result analysis ",
+            "activities review "
+        ],
+        "hasTrial": true,
+        "trialDays": 14,
+        "isPopular": true
+    },
+    {
+        "name":"Teachers plan",
+        "price": 3000,
+        "basis": "3 month",
+        "description": "Basic plan for Teachers",
+        "features": [
+            "Feature 1",
+            "Feature 2",
+            "Feature 3"
+        ],
+        "hasTrial": false,
+        "trialDays": 0,
+        "isPopular": false
+    }
+]

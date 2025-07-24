@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Noto_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import NavBar from "@/components/reusable/NavBar";
@@ -21,6 +21,27 @@ export const metadata: Metadata = {
   description: "A landing page for SchoolHub",
 };
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "700", "900"],
+});
+
+const roboto = Roboto({
+  variable: "--font-roboto",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "700"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,12 +49,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          ${inter.variable} 
+    ${notoSans.variable} 
+    ${roboto.variable} 
+          ${geistSans.variable} 
+          ${geistMono.variable} 
+          antialiased
+          `}
       >
         <ThemeClientProvider>
           <NavBar />
-
           {children}
           <Footer />
         </ThemeClientProvider>
