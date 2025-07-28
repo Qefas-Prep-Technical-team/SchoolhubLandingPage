@@ -1,10 +1,8 @@
 import Box from "@mui/material/Box"
-import IconButton from "@mui/material/IconButton"
-import MenuIcon from '@mui/icons-material/Menu';
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+
 import { ThemeToggle } from "@/app/theme-toggle";
 import NavBarDrawer from "./NavBarDrawer";
 import { mainTab } from "../Types/Nav";
@@ -16,10 +14,6 @@ interface MiniNavProps {
 }
 
 export const MiniNav: FC<MiniNavProps> = ({ pages }) => {
-
-
-
-
     return (
         <Box className="flex items-center justify-between p-2 w-100" sx={{ display: { xs: 'flex', md: 'none' } }}>
             <NavBarDrawer pages={pages} />
@@ -31,7 +25,7 @@ export const MiniNav: FC<MiniNavProps> = ({ pages }) => {
                     variant="h5"
                     noWrap
                     component="a"
-                    href="#app-bar-with-responsive-menu"
+                    href="\"
                     sx={{
                         mr: 2,
                         display: { xs: 'flex', md: 'none' },

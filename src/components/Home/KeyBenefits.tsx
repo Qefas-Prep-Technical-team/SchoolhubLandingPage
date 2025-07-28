@@ -6,7 +6,6 @@ import { IoCalendarNumberOutline } from "react-icons/io5";
 import { PiPresentationChart } from "react-icons/pi";
 import { PiFileDocLight } from "react-icons/pi";
 import { PiShootingStar } from "react-icons/pi";
-import * as motion from "motion/react-client"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Import Swiper React components

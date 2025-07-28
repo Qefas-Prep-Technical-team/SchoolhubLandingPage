@@ -3,9 +3,9 @@ import React, { FC } from 'react';
 
 const HeroSection: FC = () => {
     return (
-        <Box className="text-center mt-6">
+        <Box className="text-center mt-6 jusify-center align-center">
             <h1 className="text-4xl sm:text-5xl font-extrabold text-[var(--text-primary)] tracking-tight">Simple, transparent pricing</h1>
-            <p className="mt-4 text-lg sm:text-xl text-[var(--text-secondary)]">Find the right plan for your school. Start with a free 14-day trial.</p>
+            <p className="mt-4 text-lg sm:text-xl text-[var(--text-secondary)] w-3/4 mx-auto">Find the right plan for your school. Start with a free 14-day trial.</p>
         </Box>
     );
 };
