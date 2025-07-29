@@ -18,6 +18,7 @@ import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import BigNavBar from './BigNavBar';
 import { MiniNav } from './MiniNav';
+import NextTopLoader from 'nextjs-toploader';
 
 const pages = ['Feature', 'Pricing', 'About Us', 'contact'];
 const settings = ['Feature', 'Pricing', 'About Us', 'contact'];
@@ -53,17 +54,19 @@ function NavBar() {
     };
     const { theme } = useTheme();
     return (
-        <AppBar position="static" sx={{ backgroundColor: theme === "dark" ? 'black' : "white", color: theme === "dark" ? 'white' : "black", padding: 0 }}>
-            <Toolbar className='justify-between flex p-0' disableGutters >
-                <BigNavBar pages={pages} handleCloseNavMenu={handleCloseNavMenu} />
-                <MiniNav
-                    handleOpenNavMenu={handleOpenNavMenu}
-                    pages={pages}
-                    handleCloseNavMenu={handleCloseNavMenu}
-                />
-            </Toolbar>
-
-        </AppBar>
+        <>
+            <AppBar position="static" sx={{ backgroundColor: theme === "dark" ? 'black' : "white", color: theme === "dark" ? 'white' : "black", padding: 0 }}>
+                <Toolbar className='justify-between flex p-0' disableGutters >
+                    <BigNavBar pages={pages} handleCloseNavMenu={handleCloseNavMenu} />
+                    <MiniNav
+                        handleOpenNavMenu={handleOpenNavMenu}
+                        pages={pages}
+                        handleCloseNavMenu={handleCloseNavMenu}
+                    />
+                </Toolbar>
+            </AppBar>
+            <NextTopLoader showSpinner={false} />
+        </>
     );
 }
 export default NavBar;

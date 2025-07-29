@@ -6,6 +6,7 @@ import PricingTab from './PricingTab';
 import { useBillingStore } from '@/utils/PricingPage';
 import { useTheme } from 'next-themes';
 
+
 const PricingCard: FC = () => {
     const { billingType, setBillingType } = useBillingStore();
     const { theme } = useTheme();
