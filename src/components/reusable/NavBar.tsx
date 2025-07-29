@@ -20,7 +20,7 @@ import BigNavBar from './BigNavBar';
 import { MiniNav } from './MiniNav';
 import NextTopLoader from 'nextjs-toploader';
 
-const pages = ['Feature', 'Pricing', 'About Us', 'contact'];
+const pages = ['Feature', 'Pricing', 'About Us'];
 const settings = ['Feature', 'Pricing', 'About Us', 'contact'];
 
 function NavBar() {
@@ -39,10 +39,10 @@ function NavBar() {
             name: 'About Us',
             href: '/about'
         },
-        {
-            name: 'Contact',
-            href: '/contact'
-        }
+        // {
+        //     name: 'Contact',
+        //     href: '/contact'
+        // }
     ]
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {

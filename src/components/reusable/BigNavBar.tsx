@@ -55,7 +55,10 @@ const BigNavBar: FC<BigNavBarProps> = ({ pages, handleCloseNavMenu }) => {
             </Box>
             <Box className='flex items-center space-x-4'>
                 <ThemeToggle />
-                <Button2> Get Started</Button2>
+                <Link href="/contact" passHref>
+                    <Button2 className='bg-grey-500 text-black dark:text-white hover:text-white cursor-pointer'> contact Sales</Button2>
+                </Link>
+                <Button2 className='cursor-pointer'> Get Started</Button2>
             </Box>
         </Box>
     );

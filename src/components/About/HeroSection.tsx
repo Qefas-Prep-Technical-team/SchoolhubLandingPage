@@ -7,7 +7,7 @@ const HeroSection: FC = () => {
             <div className="relative z-10 mx-auto max-w-4xl text-center">
                 <h1 className="text-4xl font-black leading-tight tracking-tighter md:text-6xl">Our Mission</h1>
                 <p className="mt-4 text-lg font-medium md:text-xl">Empowering African schools through digital transformation.</p>
-                <button className="mt-8 inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[var(--primary-color)] text-base font-bold leading-normal tracking-wide text-white transition-transform hover:scale-105">
+                <button className="mt-8 inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-blue-500 text-base font-bold leading-normal tracking-wide text-white transition-transform hover:scale-105">
                     <span className="truncate">Get Started Today</span>
                 </button>
             </div>

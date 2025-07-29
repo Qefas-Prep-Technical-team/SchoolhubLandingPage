@@ -1,10 +1,13 @@
+import GetInTouch from '@/components/contact/GetInTouch';
+import OurLocation from '@/components/contact/OurLocation';
 import React, { FC } from 'react';
 
 const page: FC = () => {
     return (
-        <div className="flex h-full w-full items-center justify-center">
-            <h1>Contact</h1>
-        </div>
+        <main className="flex h-full w-full items-center justify-center flex-col gap-8 px-4 sm:px-6 lg:px-8">
+            <GetInTouch />
+            <OurLocation />
+        </main>
     );
 };
 

@@ -44,6 +44,8 @@
 }
 
 :root {
+    /* ...existing variables... */
+  --text-secondary: #6b7280; /* Tailwind gray-500, adjust as needed */
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -79,6 +81,8 @@
 }
 
 .dark {
+  /* ...existing variables... */
+  --text-secondary: #a1a1aa; /* Tailwind gray-400, adjust as needed for dark mode */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

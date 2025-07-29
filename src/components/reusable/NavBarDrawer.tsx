@@ -20,12 +20,14 @@ import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
 import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 import { mainTab } from '../Types/Nav';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 
 interface NavBarDrawerProps {
     pages: mainTab[];
 }
 export default function NavBarDrawer(props: NavBarDrawerProps) {
+    const { theme } = useTheme();
     const { pages } = props;
     const [open, setOpen] = React.useState(false);
     const toggleDrawer = (newOpen: boolean) => () => {
@@ -45,7 +47,7 @@ export default function NavBarDrawer(props: NavBarDrawerProps) {
 
     }
     const DrawerList = (
-        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+        <Box sx={{ width: 250, backgroundColor: theme == "dark" ? "black" : "white", flex: 1, color: theme == "dark" ? "white" : "black" }} role="presentation" onClick={toggleDrawer(false)}>
             <Box className='flex items-center flex-row justify-center flex-1 ml-5 mt-4 mb-4'>
                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, mr: 1 }}>
                     <Image src="/schoolhub.png" alt="school hub logo" width={20} height={20} className='space-x-20' />
@@ -54,7 +56,7 @@ export default function NavBarDrawer(props: NavBarDrawerProps) {
                     variant="h5"
                     noWrap
                     component="a"
-                    href="#app-bar-with-responsive-menu"
+                    href="/"
                     sx={{
                         mr: 2,
                         display: { xs: 'flex', md: 'none' },
@@ -69,13 +71,13 @@ export default function NavBarDrawer(props: NavBarDrawerProps) {
                     SCHOOLHUB
                 </Typography>
             </Box>
-            <Divider className='pt' />
+            <Divider className='pt' sx={{ backgroundColor: theme == "dark" ? "white" : "black" }} />
             <List>
-                {pages.map((text, index) => (
+                {pages.map((text) => (
                     <Link key={text.name} href={text.href} passHref>
                         <ListItem disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
+                                <ListItemIcon sx={{ color: theme == "dark" ? "white" : "black" }}>
                                     {handleIcon(text.name)}
                                 </ListItemIcon>
                                 <ListItemText primary={text.name} />
@@ -88,7 +90,7 @@ export default function NavBarDrawer(props: NavBarDrawerProps) {
     );
 
     return (
-        <div>
+        <div className={`${theme == "light" ? "bg-white-500 " : "bg-black-500"} `}>
             <IconButton
                 size="large"
                 aria-label="account of current user"
