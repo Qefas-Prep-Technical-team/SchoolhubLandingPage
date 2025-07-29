@@ -17,8 +17,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SchoolHub Landing Page",
-  description: "A landing page for SchoolHub",
+  title: 'SchoolHub – Smart School Management',
+  description: 'An all-in-one SaaS for modern schools, students, and parents.',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'SchoolHub – Empowering Schools',
+    description: 'Manage school operations with ease.',
+    images: ['/meta-image.png'],
+  },
 };
 
 const inter = Inter({
@@ -50,6 +59,28 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* <!-- Primary Meta Tags --> */}
+        <title>SchoolHub Landing Page</title>
+        <meta name="title" content="SchoolHub Landing Page" />
+        <meta name="description" content="A landing page for SchoolHub" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://school-hub-staging.vercel.app/" />
+        <meta property="og:title" content="SchoolHub Landing Page" />
+        <meta property="og:description" content="A landing page for SchoolHub" />
+        <meta property="og:image" content="/backImage.jpeg" />
+
+        {/* <!-- X (Twitter) --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://school-hub-staging.vercel.app/" />
+        <meta property="twitter:title" content="SchoolHub Landing Page" />
+        <meta property="twitter:description" content="A landing page for SchoolHub" />
+        <meta property="twitter:image" content="/backImage.jpeg" />
+
+        {/* <!-- Meta Tags Generated with https://metatags.io --> */}
       </head>
       <body
         className={`

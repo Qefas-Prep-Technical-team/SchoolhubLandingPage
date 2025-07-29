@@ -8,6 +8,7 @@ import React, { FC, useState } from 'react';
 
 const PricingPage: FC = () => {
     const [queryClient] = useState(() => new QueryClient());
+
     return (
         <QueryClientProvider client={queryClient}>
             <Box component={"main"} className='flex h-full items-center justify-center flex-col'>
