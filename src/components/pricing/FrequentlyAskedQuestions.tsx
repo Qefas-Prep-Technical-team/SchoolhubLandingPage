@@ -1,15 +1,18 @@
+"use client"
 import { Box } from '@mui/material';
 import React, { FC } from 'react';
 import { useFetchPricingFAQ } from './query';
+import { useTheme } from 'next-themes';
 
 const FrequentlyAskedQuestions: FC = () => {
     const { data } = useFetchPricingFAQ()
+    const { theme } = useTheme();
     return (
         <Box className="container mx-auto px-6 py-16 flex flex-col items-center">
-            <Box className="mt-24 max-w-4xl mx-auto w-full">
+            <Box className="md:mt-24 max-w-4xl mx-auto w-full">
                 <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">Frequently asked questions</h2>
                 <div className="mt-10 space-y-4">
-                    {data && data.map((items) => (<details key={items.question} className="group rounded-lg border border-white bg-white p-6 [&amp;_summary::-webkit-details-marker]:hidden shadow-sm">
+                    {data && data.map((items) => (<details key={items.question} className={`group rounded-lg border  ${theme === "dark" ? "bg-black " : "bg-white border-white"} p-6 [&amp;_summary::-webkit-details-marker]:hidden shadow-sm`}>
                         <summary className="flex cursor-pointer items-center justify-between">
                             <h3 className="text-lg font-medium text-[var(--text-primary)]">{items.question}</h3>
                             <svg className="h-6 w-6 transform transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>

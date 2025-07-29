@@ -4,6 +4,7 @@ import { PricingTab } from '../Types/Pricing';
 import { useBillingStore } from '@/utils/PricingPage';
 import AOS from 'aos';
 import { usePricingFocusStore } from '@/utils/PricingFocusStore';
+import { useTheme } from 'next-themes';
 
 const EachPriceCard: FC<PricingTab> = ({ name, description, pricing, type, trialDays, features, hasTrial, isPopular }) => {
     const {
@@ -20,16 +21,16 @@ const EachPriceCard: FC<PricingTab> = ({ name, description, pricing, type, trial
     const isActive = activeCardIds.includes(type);
     const isFocused = focusedCardId === type;
     const isHovered = hoveredCardId === type;
-
+    const { theme } = useTheme();
     const { billingType } = useBillingStore();
     useEffect(() => {
         AOS.init();
 
     }, []);
     return (
-        <div className={` cursor-pointer relative flex flex-col rounded-2xl border border-gray-300 bg-white p-5 shadow-lg ${isActive ? 'border-blue-600' : 'border-gray-300'}
+        <div className={` cursor-pointer relative flex flex-col rounded-2xl border ${theme === "dark" ? "bg-black " : "bg-white border-gray-300 "} px-5 py-10  md:p-5  shadow-lg ${isActive ? 'border-blue-600' : `${theme === "dark" ? "" : 'border-gray-300'}`}
         ${isFocused ? 'ring-2 ring-blue-400' : ''}
-        ${isHovered ? 'bg-gray-100 scale-110 z-10' : ''} transition-all duration-300 ease-in-out`}
+        ${isHovered ? `${theme === "dark" ? "bg-back-500" : "bg-gray-100"} scale-110 z-10` : ''} transition-all duration-300 ease-in-out`}
             onMouseEnter={() => {
                 setHoveredCardId(type);
                 setFocusMode('hover');
@@ -47,12 +48,12 @@ const EachPriceCard: FC<PricingTab> = ({ name, description, pricing, type, trial
             <div className="flex-grow">
                 {isPopular && <div data-aos="zoom-in" className="absolute top-0 -translate-y-1/2 rounded-full bg-blue-400 px-4 py-1 text-sm font-semibold text-white">Most Popular</div>}
                 <div className="flex items-center justify-between">
-                    <h2 className="text-xl font-bold ">{type}</h2>
+                    <h2 className="text-xl md:tex-txl font-bold ">{type}</h2>
                     {hasTrial && <span className="inline-flex items-center rounded-full bg-gray-200 px-4  text-sm font-semibold text-blue-500">Free {trialDays}-day trial</span>}
                 </div>
                 <div className="mt-4 flex items-baseline gap-2">
-                    <span className="text-2xl font-extrabold tracking-tight text-black-500">₦{billingType == "monthly" ? pricing?.monthly : pricing?.yearly}</span>
-                    <span className="text-xl font-semibold text-gray-500">/{billingType == "monthly" ? "monthly" : "yearly"}</span>
+                    <span className="text-xl md:text-2xl font-extrabold tracking-tight text-black-500">₦{billingType == "monthly" ? pricing?.monthly : pricing?.yearly}</span>
+                    <span className="text-xl md:text-2xl font-semibold text-gray-500">/{billingType == "monthly" ? "monthly" : "yearly"}</span>
                 </div>
                 <p className="mt-2 text-base text-[var(--text-secondary)]">{description}</p>
                 <ul className="mt-8 space-y-4">

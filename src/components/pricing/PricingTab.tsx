@@ -44,7 +44,6 @@ function a11yProps(index: number) {
 
 export default function PricingTab({ billingType, setBillingType }: PricingTabProps) {
     const queryClient = useQueryClient();
-    console.log("Billing Type:", billingType);
     const { data, isLoading } = useFetchPricing()
     const [value, setValue] = React.useState(0);
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -58,8 +57,8 @@ export default function PricingTab({ billingType, setBillingType }: PricingTabPr
     const teachers = data?.find(d => d.category === "teachers");
     return (
         <Box
-            className="container mx-auto flex-col items-center justify-center p-4   "
-            sx={{ display: 'flex', backgroundColor: theme === "dark" ? '#121212' : '#fff', color: theme === "dark" ? '#fff' : '#000' }}>
+            className="container mx-auto flex-col items-center justify-center md:p-4   "
+            sx={{ display: 'flex', backgroundColor: theme === "dark" ? "" : '#fff', color: theme === "dark" ? '#fff' : '#000' }}>
             <Box className=" justify-center items-center border-2" sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs
                     sx={{
@@ -78,10 +77,9 @@ export default function PricingTab({ billingType, setBillingType }: PricingTabPr
             </Box>
 
             <CustomTabPanel value={value} index={0}>
-                <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 px-14">
+                <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 px-6 md:px-14">
                     {
                         individuals && individuals.tabs.map((tabs) => {
-                            console.log("Tabs Data:", tabs);
                             return <EachPriceCard key={tabs.type} {...tabs} />
                         }
                         )
@@ -90,7 +88,7 @@ export default function PricingTab({ billingType, setBillingType }: PricingTabPr
                 </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-                <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 px-14">
+                <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 px-4 md:px-14">
                     {
                         schools && schools.tabs.map((tabs) => {
                             console.log("Tabs Data:", tabs);
