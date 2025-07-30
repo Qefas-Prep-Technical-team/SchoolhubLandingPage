@@ -21,6 +21,8 @@ import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettin
 import { mainTab } from '../Types/Nav';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import PhoneCallbackOutlinedIcon from '@mui/icons-material/PhoneCallbackOutlined';
 
 
 interface NavBarDrawerProps {
@@ -85,6 +87,27 @@ export default function NavBarDrawer(props: NavBarDrawerProps) {
                         </ListItem>
                     </Link>
                 ))}
+                <Divider className='pt' sx={{ backgroundColor: theme == "dark" ? "white" : "black", mt: 10 }} />
+                <Link href={"/contact"} passHref>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon sx={{ color: theme == "dark" ? "white" : "black" }}>
+                                <PhoneCallbackOutlinedIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Contact Us"} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
+                <Link href={"/signup"} passHref>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon sx={{ color: theme == "dark" ? "white" : "black" }}>
+                                <LoginOutlinedIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Get Started"} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
             </List>
         </Box>
     );

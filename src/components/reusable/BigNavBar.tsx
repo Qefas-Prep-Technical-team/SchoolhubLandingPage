@@ -58,7 +58,9 @@ const BigNavBar: FC<BigNavBarProps> = ({ pages, handleCloseNavMenu }) => {
                 <Link href="/contact" passHref>
                     <Button2 className='bg-grey-500 text-black dark:text-white hover:text-white cursor-pointer'> contact Sales</Button2>
                 </Link>
-                <Button2 className='cursor-pointer'> Get Started</Button2>
+                <Link href="/signup" passHref>
+                    <Button2 className='cursor-pointer'> Get Started</Button2>
+                </Link>
             </Box>
         </Box>
     );

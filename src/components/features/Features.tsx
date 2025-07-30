@@ -19,7 +19,7 @@ const Features: FC = () => {
         <Box component={"div"} className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {data && data.map((data, index) => (
                 <div key={data.title} className="bg-white rounded-lg shadow-md p-8 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
-                    <div className="bg-blue-100 text-[var(--primary-color)] rounded-full p-4 mb-6">
+                    <div className="bg-blue-100 text-blue-500 rounded-full p-4 mb-6">
                         <svg fill="currentColor" height="32" viewBox="0 0 256 256" width="32" xmlns="http://www.w3.org/2000/svg"><path d={data.path}></path></svg>
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{data.title}</h3>
