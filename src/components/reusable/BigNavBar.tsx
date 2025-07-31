@@ -15,8 +15,12 @@ const BigNavBar: FC<BigNavBarProps> = ({ pages, handleCloseNavMenu }) => {
 
 
     return (
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'space-between', px: 2, flexGrow: 1, width: '100%' }}>
-            <Box className='flex items-center flex-row justify-center'>
+        <Box
+            className="w-full px-2 hidden md:grid grid-cols-3 items-center"
+            sx={{ flexGrow: 1 }}
+        >
+            {/* Left: Logo */}
+            <Box className="flex items-center flex-row justify-start">
                 <Box className="justify-center items-center flex mr-5 p-0">
                     <Image src="/schoolhub.png" alt="school hub logo" width={30} height={30} className='space-x-20' />
                 </Box>
@@ -33,33 +37,34 @@ const BigNavBar: FC<BigNavBarProps> = ({ pages, handleCloseNavMenu }) => {
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
-
                         }}
                     >
                         SCHOOLHUB
                     </Typography>
                 </Link>
             </Box>
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            {/* Center: Nav Links */}
+            <Box className="flex justify-center">
                 {pages.map((page) => (
                     <Button
                         key={page.name}
                         onClick={handleCloseNavMenu}
                         sx={{ my: 2, display: 'block', color: "inherit" }}
                         component={Link}
-                        href={page.href} // Ensure each page object has an href property
+                        href={page.href}
                     >
                         {page.name}
                     </Button>
                 ))}
             </Box>
-            <Box className='flex items-center space-x-4'>
+            {/* Right: Actions */}
+            <Box className="flex items-center justify-end space-x-4">
                 <ThemeToggle />
                 <Link href="/contact" passHref>
-                    <Button2 className='bg-grey-500 text-black dark:text-white hover:text-white cursor-pointer'> contact Sales</Button2>
+                    <Button2 className='bg-grey-500 text-black dark:text-white hover:text-white cursor-pointer'>contact Sales</Button2>
                 </Link>
                 <Link href="/signup" passHref>
-                    <Button2 className='cursor-pointer'> Get Started</Button2>
+                    <Button2 className='cursor-pointer'>Get Started</Button2>
                 </Link>
             </Box>
         </Box>

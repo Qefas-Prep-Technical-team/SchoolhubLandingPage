@@ -60,7 +60,7 @@ const KeyBenefits: FC = () => {
                 </div>
                 <Box component={"div"} className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-10 w-4/4 px-26  ">
                     {benefits.map((benefit, index) => (
-                        <Box key={index} className="flex flex-col items-center justify-center p-6 py-10 bg-white dark:bg-black rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-4/4 text-center">
+                        <Box key={index} className="flex flex-col items-center justify-center p-6 py-10 bg-white dark:bg-[var(--primary-foreground)] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-4/4 text-center">
                             <div
                                 data-aos="zoom-in"
                                 className="text-4xl mb-4 text-blue-500 rounded-full bg-blue-100 p-4">

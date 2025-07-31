@@ -3,7 +3,7 @@ export default function MapPreview() {
     return (
         <div className="w-full h-96 rounded-md overflow-hidden shadow-lg">
             <iframe
-                src="https://maps.google.com/maps?q=university of lagos&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Quality Education For All Students&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="400"
                 allowFullScreen

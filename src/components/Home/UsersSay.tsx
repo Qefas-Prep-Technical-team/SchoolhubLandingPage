@@ -34,7 +34,7 @@ const UsersSay: FC = () => {
                 <Box component={"div"} className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20 w-4/4 px-26 h-70 ">
                     {data &&
                         data.map((user, index) => (
-                            <div key={index} className="testimonial-card flex flex-col items-center text-center p-8 bg-slate-50 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300">
+                            <div key={index} className="cursor-pointer testimonial-card flex flex-col items-center text-center p-8 bg-slate-50 dark:bg-[var(--primary-foreground)] rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300">
                                 <div className="testimonial-image w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-white shadow-lg transition-transform duration-300 relative">
                                     <Image
                                         src={user.image}
@@ -43,8 +43,8 @@ const UsersSay: FC = () => {
                                         style={{ objectFit: "cover" }}
                                     />
                                 </div>
-                                <blockquote className="text-slate-700 text-lg italic mb-4">`{user.comment}`</blockquote>
-                                <cite className="font-semibold text-slate-900">{user.name}, <span className="font-normal text-slate-500">{user.role}</span></cite>
+                                <blockquote className="text-slate-700 dark:text-[var(--text-secondary)] text-lg italic mb-4">`{user.comment}`</blockquote>
+                                <cite className="font-semibold text-slate-900 dark:text-[var(--Secondary)]">{user.name}, <span className="font-normal text-slate-500 dark:text-[var(--text-secondary)]">{user.role}</span></cite>
                             </div>
                         ))
                     }

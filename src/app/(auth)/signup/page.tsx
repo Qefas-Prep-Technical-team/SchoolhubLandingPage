@@ -7,9 +7,8 @@ import React, { FC } from 'react';
 
 const page: FC = () => {
     return (
-        <div className="min-h-screen w-full bg-gradient-to-br from-blue-100 to-white dark:to-black flex items-center justify-center relative ">
-            {/* <div className="absolute inset-0 backdrop-blur-sm  z-0" /> */}
-            <div className="relative z-10 max-w-lg bg-white dark:bg-black w-full p-6 rounded-xl shadow-lg border border-white/20 m-20">
+        <div className="min-h-screen w-full bg-gradient-to-br from-blue-100/80 to-white/90 dark:from-gray-900/80 dark:to-black/90 flex items-center justify-center relative p-4">
+            <div className="glassmorphism relative z-10 max-w-lg w-full p-8 md:p-10 rounded-2xl shadow-2xl backdrop-blur-lg">
                 <HeroSection />
                 <GetStartedRoleSelect />
                 <Buttons />
